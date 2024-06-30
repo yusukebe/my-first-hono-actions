@@ -37,7 +37,9 @@ app.get('/', async (c) => {
         const likeAction = action(index)
         return (
           <aside>
-            <h2>{post.title}</h2>
+            <h2>
+              <a href={`/posts/${post.id}`}>{post.title}</a>
+            </h2>
             <div>{post.body}</div>
             <form action={likeAction}>
               <Component postId={post.id} action={likeAction} />
@@ -45,6 +47,26 @@ app.get('/', async (c) => {
           </aside>
         )
       })}
+    </section>
+  )
+})
+
+app.get('/posts/:id', async (c) => {
+  const result = await c.var.db
+    .select()
+    .from(posts)
+    .where(eq(posts.id, Number(c.req.param('id'))))
+  const post = result[0]
+  if (!post) {
+    return c.notFound()
+  }
+  return c.render(
+    <section>
+      <title>{post.title}</title>
+      <aside>
+        <h2>{post.title}</h2>
+        <div>{post.body}</div>
+      </aside>
     </section>
   )
 })
