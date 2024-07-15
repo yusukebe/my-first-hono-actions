@@ -1,5 +1,4 @@
 import { createForm } from 'hono/action'
-import { showRoutes } from 'hono/dev'
 import { factory } from './factory'
 
 const app = factory.createApp()
@@ -17,7 +16,5 @@ const [Component] = createForm(app, (data) => {
 app.get('/', (c) => {
   return c.render(<Component />)
 })
-
-showRoutes(app)
 
 export default app
