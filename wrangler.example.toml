@@ -3,12 +3,6 @@ pages_build_output_dir = "./dist"
 compatibility_date = "2024-06-29"
 compatibility_flags = ["nodejs_compat"]
 
-[[d1_databases]]
-binding = "DB" # i.e. available in your Worker on env.DB
-database_name = "my-app-actions"
-database_id = ""
-migrations_dir = "drizzle"
-
 # [vars]
 # MY_VAR = "my-variable"
 

@@ -1,23 +1,5 @@
-footer,
-header,
-main {
-  padding: 1rem;
-}
-
-.error {
-  color: red;
-}
-
-aside form {
-  border: none;
-  display: inline;
-  box-shadow: none;
-  padding: 0;
-}
-
-aside form button {
-  margin-top: 1rem;
-  padding: 0.2rem;
+form button {
+  padding: 0.6rem;
 }
 
 form[data-hono-disabled='1'] button {

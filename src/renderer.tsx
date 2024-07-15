@@ -9,14 +9,6 @@ export const renderer = jsxRenderer(
           <link href='/static/style.css' rel='stylesheet' />
         </head>
         <body>
-          <header>
-            <h1>
-              <a href='/'>Nice Blog</a>
-            </h1>
-            <div>
-              <a href='/create'>Create</a>
-            </div>
-          </header>
           <main>{children}</main>
         </body>
       </html>
